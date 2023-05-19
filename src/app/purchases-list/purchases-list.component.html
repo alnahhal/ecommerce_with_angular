@@ -1,0 +1,22 @@
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">price</th>
+        <th scope="col">stock</th>
+        <th scope="col">quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.title}}</td>
+        <td>{{product.price * product.quantity!}} EGP</td>
+        <td>{{product.stock}}</td>
+        <td>{{product.quantity}}</td>
+        <th ><button (click)="decreaseItem(product.id , product.stock , product.quantity!)"> -</button></th>
+        <td> <button (click)="increaseItem(product.id , product.stock )"> +</button></td>
+      </tr>
+      <!-- <app-product-card></app-product-card> -->
+  
+    </tbody>
+  </table>
